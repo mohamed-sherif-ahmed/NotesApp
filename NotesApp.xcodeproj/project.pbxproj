@@ -13,6 +13,10 @@
 		108ED57222350D1F0093AAE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 108ED57122350D1F0093AAE4 /* Assets.xcassets */; };
 		108ED57522350D1F0093AAE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108ED57322350D1F0093AAE4 /* LaunchScreen.storyboard */; };
 		108ED580223515110093AAE4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108ED57F223515110093AAE4 /* MainViewController.swift */; };
+		108ED583223519860093AAE4 /* FolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108ED582223519860093AAE4 /* FolderCell.xib */; };
+		108ED58522351A240093AAE4 /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */; };
+		10939D9522352A7100D3E3B1 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10939D9422352A7100D3E3B1 /* NavigationView.xib */; };
+		10939D9722352A9700D3E3B1 /* UINavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10939D9622352A9700D3E3B1 /* UINavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		108ED57422350D1F0093AAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		108ED57622350D1F0093AAE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		108ED57F223515110093AAE4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		108ED582223519860093AAE4 /* FolderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderCell.xib; sourceTree = "<group>"; };
+		108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		10939D9422352A7100D3E3B1 /* NavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
+		10939D9622352A9700D3E3B1 /* UINavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		108ED56622350D1D0093AAE4 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				108ED581223519730093AAE4 /* View */,
 				108ED57E22350DA00093AAE4 /* Controllers */,
 				108ED57D22350D7F0093AAE4 /* Storyboards */,
 				108ED57C22350D6D0093AAE4 /* Supporting Files */,
@@ -89,6 +98,17 @@
 				108ED57F223515110093AAE4 /* MainViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		108ED581223519730093AAE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				108ED582223519860093AAE4 /* FolderCell.xib */,
+				108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */,
+				10939D9422352A7100D3E3B1 /* NavigationView.xib */,
+				10939D9622352A9700D3E3B1 /* UINavigationView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +170,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				108ED57522350D1F0093AAE4 /* LaunchScreen.storyboard in Resources */,
+				10939D9522352A7100D3E3B1 /* NavigationView.xib in Resources */,
 				108ED57222350D1F0093AAE4 /* Assets.xcassets in Resources */,
 				108ED56D22350D1D0093AAE4 /* Main.storyboard in Resources */,
+				108ED583223519860093AAE4 /* FolderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108ED58522351A240093AAE4 /* FolderCollectionViewCell.swift in Sources */,
 				108ED580223515110093AAE4 /* MainViewController.swift in Sources */,
+				10939D9722352A9700D3E3B1 /* UINavigationView.swift in Sources */,
 				108ED57022350D1D0093AAE4 /* NotesApp.xcdatamodeld in Sources */,
 				108ED56822350D1D0093AAE4 /* AppDelegate.swift in Sources */,
 			);
