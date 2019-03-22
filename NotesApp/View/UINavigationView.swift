@@ -10,6 +10,8 @@ import UIKit
 
 class UINavigationView: UIView {
     
+    var navigationController:NavigationControllerProtocol?
+    
     @IBOutlet var contentView: UIView!
     
     override init(frame: CGRect) {
@@ -27,6 +29,15 @@ class UINavigationView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+    @IBAction func goToNotes(_ sender: Any) {
+        print("Ra7een Gayeen")
+        navigationController?.goToNotes()
+    }
+    
+    @IBAction func goToFolders(_ sender: Any) {
+        navigationController?.goToFolders()
+    }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

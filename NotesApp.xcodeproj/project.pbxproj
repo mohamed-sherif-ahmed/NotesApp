@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10046BDF22423F2C0041415C /* NavigationControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BDE22423F2C0041415C /* NavigationControllerProtocol.swift */; };
+		10046BE2224275810041415C /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BE0224275810041415C /* TodosViewController.swift */; };
+		10046BE3224275810041415C /* TodosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10046BE1224275810041415C /* TodosViewController.xib */; };
+		10046BE52244BEE40041415C /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BE42244BEE40041415C /* NoteEditViewController.swift */; };
 		108ED56822350D1D0093AAE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108ED56722350D1D0093AAE4 /* AppDelegate.swift */; };
 		108ED56D22350D1D0093AAE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108ED56B22350D1D0093AAE4 /* Main.storyboard */; };
 		108ED57022350D1D0093AAE4 /* NotesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 108ED56E22350D1D0093AAE4 /* NotesApp.xcdatamodeld */; };
@@ -17,9 +21,16 @@
 		108ED58522351A240093AAE4 /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */; };
 		10939D9522352A7100D3E3B1 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10939D9422352A7100D3E3B1 /* NavigationView.xib */; };
 		10939D9722352A9700D3E3B1 /* UINavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10939D9622352A9700D3E3B1 /* UINavigationView.swift */; };
+		10939D9C223F838A00D3E3B1 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10939D9A223F838A00D3E3B1 /* NotesViewController.swift */; };
+		10939D9D223F838A00D3E3B1 /* NotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10939D9B223F838A00D3E3B1 /* NotesViewController.xib */; };
+		10AB303C224210A200449264 /* FoldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB303B224210A200449264 /* FoldersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10046BDE22423F2C0041415C /* NavigationControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerProtocol.swift; sourceTree = "<group>"; };
+		10046BE0224275810041415C /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
+		10046BE1224275810041415C /* TodosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodosViewController.xib; sourceTree = "<group>"; };
+		10046BE42244BEE40041415C /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		108ED56422350D1D0093AAE4 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		108ED56722350D1D0093AAE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		108ED56C22350D1D0093AAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +43,9 @@
 		108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		10939D9422352A7100D3E3B1 /* NavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		10939D9622352A9700D3E3B1 /* UINavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationView.swift; sourceTree = "<group>"; };
+		10939D9A223F838A00D3E3B1 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		10939D9B223F838A00D3E3B1 /* NotesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesViewController.xib; sourceTree = "<group>"; };
+		10AB303B224210A200449264 /* FoldersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				108ED57F223515110093AAE4 /* MainViewController.swift */,
+				10939D9A223F838A00D3E3B1 /* NotesViewController.swift */,
+				10AB303B224210A200449264 /* FoldersViewController.swift */,
+				10046BDE22423F2C0041415C /* NavigationControllerProtocol.swift */,
+				10046BE0224275810041415C /* TodosViewController.swift */,
+				10046BE42244BEE40041415C /* NoteEditViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -106,6 +125,8 @@
 				108ED582223519860093AAE4 /* FolderCell.xib */,
 				108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */,
 				10939D9422352A7100D3E3B1 /* NavigationView.xib */,
+				10939D9B223F838A00D3E3B1 /* NotesViewController.xib */,
+				10046BE1224275810041415C /* TodosViewController.xib */,
 				10939D9622352A9700D3E3B1 /* UINavigationView.swift */,
 			);
 			path = View;
@@ -169,8 +190,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10046BE3224275810041415C /* TodosViewController.xib in Resources */,
 				108ED57522350D1F0093AAE4 /* LaunchScreen.storyboard in Resources */,
 				10939D9522352A7100D3E3B1 /* NavigationView.xib in Resources */,
+				10939D9D223F838A00D3E3B1 /* NotesViewController.xib in Resources */,
 				108ED57222350D1F0093AAE4 /* Assets.xcassets in Resources */,
 				108ED56D22350D1D0093AAE4 /* Main.storyboard in Resources */,
 				108ED583223519860093AAE4 /* FolderCell.xib in Resources */,
@@ -186,9 +209,14 @@
 			files = (
 				108ED58522351A240093AAE4 /* FolderCollectionViewCell.swift in Sources */,
 				108ED580223515110093AAE4 /* MainViewController.swift in Sources */,
+				10939D9C223F838A00D3E3B1 /* NotesViewController.swift in Sources */,
 				10939D9722352A9700D3E3B1 /* UINavigationView.swift in Sources */,
+				10046BE2224275810041415C /* TodosViewController.swift in Sources */,
 				108ED57022350D1D0093AAE4 /* NotesApp.xcdatamodeld in Sources */,
+				10AB303C224210A200449264 /* FoldersViewController.swift in Sources */,
 				108ED56822350D1D0093AAE4 /* AppDelegate.swift in Sources */,
+				10046BE52244BEE40041415C /* NoteEditViewController.swift in Sources */,
+				10046BDF22423F2C0041415C /* NavigationControllerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
