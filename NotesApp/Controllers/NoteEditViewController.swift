@@ -9,7 +9,18 @@
 import UIKit
 
 class NoteEditViewController: UIViewController {
-    let editView = UITextView()
+    lazy var noteText: UITextView = {
+        let tv = UITextView()
+        tv.backgroundColor = .lightGray
+        return tv
+    }()
+    
+    lazy var noteTitle: UITextView = {
+        let tv = UITextView()
+        tv.backgroundColor = UIColor.blue
+        return tv
+    }()
+    
     var noteName: String?
 
     override func viewDidLoad() {
@@ -20,28 +31,18 @@ class NoteEditViewController: UIViewController {
     }
     
     func prepareView() {
-        view.backgroundColor = .yellow
-        editView.frame = CGRect(x: view.bounds.minX, y: view.bounds.minY, width: view.frame.width, height: view.frame.height)
-        view.addSubview(editView)
-//        view = UIView()
-//        view.addSubview(editView)
-//        let contstrains = [
-//            NSLayoutConstraint(item: editView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1, constant: 5),
-//            NSLayoutConstraint(item: editView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 5),
-//            NSLayoutConstraint(item: editView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 5),
-//            NSLayoutConstraint(item: editView, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 5)
-//        ]
-//        editView.addConstraints(contstrains)
+        view.backgroundColor = .white
+        view.addSubview(noteText)
+        view.addSubview(noteTitle)
+        noteTitle.translatesAutoresizingMaskIntoConstraints = false
+        noteText.translatesAutoresizingMaskIntoConstraints = false
+        [noteTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+         noteTitle.heightAnchor.constraint(equalToConstant: 75),
+         noteTitle.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+         noteTitle.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+         noteText.topAnchor.constraint(equalTo: noteTitle.bottomAnchor),
+         noteText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+         noteText.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+         noteText.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)].forEach { $0.isActive = true}
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
