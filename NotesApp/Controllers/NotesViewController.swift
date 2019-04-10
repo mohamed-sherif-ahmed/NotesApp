@@ -7,26 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class NotesViewController: MainViewController {
+    
+    let context = AppDelegate.viewContext
+    var notes = [Note]()
 
     @IBOutlet weak var notesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Notes"
         notesCollectionView.register(FolderCollectionViewCell.self, forCellWithReuseIdentifier: "noteCell")
+        let req: NSFetchRequest<Note> = Note.fetchRequest()
+        do {
+            notes = try context.fetch(req)
+        } catch {
+            print("Error Fetching NotesVC")
+        }
+        notesCollectionView.reloadData()
         // Do any additional setup after loading the view.
     }
 }
 
 extension NotesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return notes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! FolderCollectionViewCell
-        cell.lblFolderName.text = "Note \(indexPath.item)"
+        let n = notes[indexPath.item]
+        cell.lblFolderName.text = n.title
         return cell
     }
     

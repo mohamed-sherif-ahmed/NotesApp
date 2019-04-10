@@ -10,7 +10,7 @@ import UIKit
 
 class UINavigationView: UIView {
     
-    var navigationController:NavigationControllerProtocol?
+    var navigationController:SideNavigationProtocol?
     
     @IBOutlet var contentView: UIView!
     

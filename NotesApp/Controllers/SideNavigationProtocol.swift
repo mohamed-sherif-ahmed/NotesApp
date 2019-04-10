@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol NavigationControllerProtocol {
+protocol SideNavigationProtocol {
     func goToNotes()
     func goToFolders()
     func goToSettings()

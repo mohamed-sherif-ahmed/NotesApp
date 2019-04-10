@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10046BDF22423F2C0041415C /* NavigationControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BDE22423F2C0041415C /* NavigationControllerProtocol.swift */; };
+		10046BDF22423F2C0041415C /* SideNavigationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BDE22423F2C0041415C /* SideNavigationProtocol.swift */; };
 		10046BE2224275810041415C /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BE0224275810041415C /* TodosViewController.swift */; };
 		10046BE3224275810041415C /* TodosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10046BE1224275810041415C /* TodosViewController.xib */; };
 		10046BE52244BEE40041415C /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BE42244BEE40041415C /* NoteEditViewController.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10046BDE22423F2C0041415C /* NavigationControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerProtocol.swift; sourceTree = "<group>"; };
+		10046BDE22423F2C0041415C /* SideNavigationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationProtocol.swift; sourceTree = "<group>"; };
 		10046BE0224275810041415C /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
 		10046BE1224275810041415C /* TodosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodosViewController.xib; sourceTree = "<group>"; };
 		10046BE42244BEE40041415C /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +59,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10794C5422494542000712E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		108ED55B22350D1D0093AAE4 = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +85,9 @@
 		108ED56622350D1D0093AAE4 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
-				108ED581223519730093AAE4 /* View */,
 				108ED57E22350DA00093AAE4 /* Controllers */,
+				10794C5422494542000712E4 /* Model */,
+				108ED581223519730093AAE4 /* View */,
 				108ED57D22350D7F0093AAE4 /* Storyboards */,
 				108ED57C22350D6D0093AAE4 /* Supporting Files */,
 				108ED57622350D1F0093AAE4 /* Info.plist */,
@@ -112,7 +120,7 @@
 				108ED57F223515110093AAE4 /* MainViewController.swift */,
 				10939D9A223F838A00D3E3B1 /* NotesViewController.swift */,
 				10AB303B224210A200449264 /* FoldersViewController.swift */,
-				10046BDE22423F2C0041415C /* NavigationControllerProtocol.swift */,
+				10046BDE22423F2C0041415C /* SideNavigationProtocol.swift */,
 				10046BE0224275810041415C /* TodosViewController.swift */,
 				10046BE42244BEE40041415C /* NoteEditViewController.swift */,
 			);
@@ -164,6 +172,7 @@
 				TargetAttributes = {
 					108ED56322350D1D0093AAE4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -216,7 +225,7 @@
 				10AB303C224210A200449264 /* FoldersViewController.swift in Sources */,
 				108ED56822350D1D0093AAE4 /* AppDelegate.swift in Sources */,
 				10046BE52244BEE40041415C /* NoteEditViewController.swift in Sources */,
-				10046BDF22423F2C0041415C /* NavigationControllerProtocol.swift in Sources */,
+				10046BDF22423F2C0041415C /* SideNavigationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,13 +374,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79BTS3PT7G;
 				INFOPLIST_FILE = NotesApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ms.NotesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -383,13 +393,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79BTS3PT7G;
 				INFOPLIST_FILE = NotesApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ms.NotesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

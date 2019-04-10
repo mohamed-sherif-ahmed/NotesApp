@@ -16,14 +16,25 @@ class MainViewController: UIViewController{
     //MARK: Controller LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.title = "Folders"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Profile", style: .plain, target: self, action: #selector(openSide))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addDummyNote))
+    }
+    
+    @objc func addDummyNote() {
+        let context = AppDelegate.viewContext
+        let note = Note(context: context)
+        note.text = "Core Data Test!!"
+        note.title = "Core Data Title!!"
+        do {
+            try context.save()
+        } catch {
+            print("ERR!! SAVING CONTEXT MainVC")
+        }
     }
     
     @objc func openSide() {
         navigationView = UINavigationView()
-        navigationView?.navigationController = self as NavigationControllerProtocol
+        navigationView?.navigationController = self as SideNavigationProtocol
         let sideNavViewWidth = view.bounds.width * (3/4)
         let startPos = CGRect(x: -1 * sideNavViewWidth, y: 0, width: sideNavViewWidth, height: view.frame.height)
         navigationView?.frame = startPos
@@ -69,7 +80,7 @@ class MainViewController: UIViewController{
     }
 }
 
-extension MainViewController: NavigationControllerProtocol {
+extension MainViewController: SideNavigationProtocol {
     func goToFolders() {
         animateNavBarDisappearance {
             let sb = UIStoryboard(name: "Main", bundle: nil)
