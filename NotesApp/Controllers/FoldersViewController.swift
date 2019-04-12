@@ -8,14 +8,26 @@
 
 import UIKit
 
-class FoldersViewController: MainViewController {
-
-    @IBOutlet weak var foldersCollectionView: UICollectionView!
+class FoldersViewController: BaseViewController {
+    
+    lazy var foldersCollectionView:UICollectionView = {
+        let fcv = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
+        fcv.register(FolderCollectionViewCell.self, forCellWithReuseIdentifier: "folderCell")
+        fcv.backgroundColor = .white
+        fcv.dataSource = self
+        fcv.delegate = self
+        return fcv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Folders"
-        foldersCollectionView.register(FolderCollectionViewCell.self, forCellWithReuseIdentifier: "folderCell")
+        view.addSubview(foldersCollectionView)
+//        foldersCollectionView.translatesAutoresizingMaskIntoConstraints = false
+//        [foldersCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//        foldersCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+//        foldersCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+//        foldersCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)].forEach{$0.isActive = true}
     }
 }
 

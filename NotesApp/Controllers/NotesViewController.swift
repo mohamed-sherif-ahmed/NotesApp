@@ -9,12 +9,13 @@
 import UIKit
 import CoreData
 
-class NotesViewController: MainViewController {
+class NotesViewController: BaseViewController {
     
     let context = AppDelegate.viewContext
     var notes = [Note]()
 
     @IBOutlet weak var notesCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Notes"
