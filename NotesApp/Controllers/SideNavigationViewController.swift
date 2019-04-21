@@ -13,11 +13,14 @@ class SideNavigationViewController: UIViewController {
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.reloadData()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.isScrollEnabled = false
         return tableView
     }()
+    
+    var navigationDelegate: CenterNavigationDelegate?
     
     let settingStrings = ["Folders", "Todo", "Notes", "Settings"]
     let cellIdentifier = "settingCell"
@@ -47,6 +50,17 @@ extension SideNavigationViewController: UITableViewDataSource {
 
 extension SideNavigationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        switch indexPath.item {
+        case 0:
+            navigationDelegate?.segue(to: FoldersViewController())
+        case 1:
+            navigationDelegate?.segue(to: TodosViewController())
+        case 2:
+            navigationDelegate?.segue(to: NotesViewController())
+//        case 3:
+//            navigationDelegate?.segue(to: <#T##BaseViewController#>)
+        default:
+            print("ERR")
+        }
     }
 }

@@ -40,7 +40,7 @@ class FoldersViewController: BaseViewController {
     
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "folderCell", for: indexPath) as! FolderCollectionViewCell
-            cell.lblFolderName.text = "Test"
+            cell.folderName.text = "Test"
             return cell
         }
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

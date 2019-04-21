@@ -32,6 +32,6 @@ class BaseViewController: UIViewController{
     }
     
     @objc func openSide() {
-        navigationDrawerDelegate?.toogleDrawer()
+        navigationDrawerDelegate?.toogleDrawer() {}
     }
 }

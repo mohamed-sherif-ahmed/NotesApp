@@ -39,7 +39,7 @@ extension NotesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! FolderCollectionViewCell
         let n = notes[indexPath.item]
-        cell.lblFolderName.text = n.title
+        cell.folderName.text = n.title
         return cell
     }
     

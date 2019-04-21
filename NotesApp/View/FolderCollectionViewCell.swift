@@ -9,24 +9,27 @@
 import UIKit
 
 class FolderCollectionViewCell: UICollectionViewCell {
-    //MARK: IBOutlets
-    
-    @IBOutlet weak var lblFolderName: UILabel!
+    lazy var folderName: UILabel = {
+        let fName = UILabel()
+        fName.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        fName.textColor = .black
+        return fName
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+//        backgroundColor = .gray
+        addSubview(folderName)
+        folderName.translatesAutoresizingMaskIntoConstraints = false
+        [folderName.centerXAnchor.constraint(equalTo: centerXAnchor),
+         folderName.centerYAnchor.constraint(equalTo: centerYAnchor)].forEach{$0.isActive = true}
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderWidth = 1.0
+        
+        
     }
+    
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    func commonInit() {
-        Bundle.main.loadNibNamed("FolderCell", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    }
-    
 }

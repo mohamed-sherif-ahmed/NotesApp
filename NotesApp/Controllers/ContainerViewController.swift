@@ -10,14 +10,19 @@ import UIKit
 
 class ContainerViewController: UIViewController {
     
-    var mainViewController: UIViewController?
+    lazy var mainViewController: UINavigationController = {
+        let fVC = FoldersViewController()
+        fVC.navigationDrawerDelegate = self
+        let mainvc = UINavigationController(rootViewController: fVC)
+        return mainvc
+    }()
     var sideNavigationController: SideNavigationViewController?
     var navigationState: NavigationState = .collapsed {
         didSet{
             if navigationState != .collapsed {
-                mainViewController?.view.layer.shadowOpacity = 0.8
+                mainViewController.view.layer.shadowOpacity = 0.8
             } else {
-                mainViewController?.view.layer.shadowOpacity = 0.0
+                mainViewController.view.layer.shadowOpacity = 0.0
             }
         }
     }
@@ -25,33 +30,50 @@ class ContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rootVC = FoldersViewController()
-        rootVC.navigationDrawerDelegate = self
-        mainViewController = UINavigationController(rootViewController: rootVC)
-        view.addSubview(mainViewController!.view)
-        addChild(mainViewController!)
+        view.addSubview(mainViewController.view)
+        addChild(mainViewController)
+//        self.segue(to: FoldersViewController())
     }
 }
 
 extension ContainerViewController: CenterViewDelegate{
-    func toogleDrawer() {
+    func toogleDrawer(callback: @escaping () -> Void) {
         if navigationState == .collapsed {
             navigationState = .expanded
             sideNavigationController = SideNavigationViewController()
+            sideNavigationController?.navigationDelegate = self
             sideNavigationController!.view.frame = CGRect(x: 0, y: 0, width: view.frame.width - 120, height: view.frame.height)
             view.insertSubview(sideNavigationController!.view, at: 0)
             addChild(sideNavigationController!)
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut,  animations: {
-                self.mainViewController?.view.frame = CGRect(x: self.view.frame.width - 120, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+                self.mainViewController.view.frame = CGRect(x: self.view.frame.width - 120, y: 0, width: self.view.frame.width, height: self.view.frame.height)
             })
         } else {
             navigationState = .collapsed
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut,  animations: {
-                self.mainViewController?.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+                self.mainViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
             }) { s in
                 self.sideNavigationController!.view.removeFromSuperview()
                 self.sideNavigationController = nil
+                callback()
             }
+        }
+        
+    }
+}
+
+extension ContainerViewController: CenterNavigationDelegate {
+    func segue(to vc: BaseViewController) {
+        toogleDrawer {
+//            mainViewController.view.removeFromSuperview()
+//            mainViewController.removeFromParent()
+//            mainViewController = nil
+//            vc.navigationDrawerDelegate = self
+//            mainViewController = UINavigationController(rootViewController: vc)
+//            view.addSubview(mainViewController.view)
+//            addChild(mainViewController)
+            vc.navigationDrawerDelegate = self
+            self.mainViewController.pushViewController(vc, animated: true)
         }
     }
 }

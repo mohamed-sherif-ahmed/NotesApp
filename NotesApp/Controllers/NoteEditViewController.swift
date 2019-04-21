@@ -9,15 +9,21 @@
 import UIKit
 
 class NoteEditViewController: UIViewController {
-    lazy var noteText: UITextView = {
+    lazy var noteTitle: UITextView = {
         let tv = UITextView()
-        tv.backgroundColor = .lightGray
+        tv.text = "Note Title !"
+        tv.textColor = .gray
+        tv.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        tv.delegate = self
         return tv
     }()
     
-    lazy var noteTitle: UITextView = {
+    lazy var noteText: UITextView = {
         let tv = UITextView()
-        tv.backgroundColor = UIColor.blue
+        tv.text = "Note Body !"
+        tv.textColor = .gray
+        tv.font = UIFont.systemFont(ofSize: 24, weight: .regular)
+        tv.delegate = self
         return tv
     }()
     
@@ -44,5 +50,25 @@ class NoteEditViewController: UIViewController {
          noteText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
          noteText.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
          noteText.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)].forEach { $0.isActive = true}
+    }
+}
+
+extension NoteEditViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .gray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == nil || textView.text == "" {
+            textView.textColor = .gray
+            if textView == noteTitle {
+                textView.text = "Note Title !"
+            } else {
+                textView.text = "Note Body !"
+            }
+        }
     }
 }

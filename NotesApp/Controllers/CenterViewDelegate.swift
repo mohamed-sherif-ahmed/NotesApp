@@ -9,5 +9,5 @@
 import UIKit
 
 protocol CenterViewDelegate {
-    func toogleDrawer()
+    func toogleDrawer(callback: @escaping () -> Void)
 }

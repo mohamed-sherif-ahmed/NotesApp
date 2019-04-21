@@ -9,5 +9,5 @@
 import UIKit
 
 protocol CenterNavigationDelegate {
-    func segue(to vc: UIViewController)
+    func segue(to vc: BaseViewController)
 }
