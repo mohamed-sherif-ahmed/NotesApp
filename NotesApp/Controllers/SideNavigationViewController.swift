@@ -22,7 +22,7 @@ class SideNavigationViewController: UIViewController {
     
     var navigationDelegate: CenterNavigationDelegate?
     
-    let settingStrings = ["Folders", "Todo", "Notes", "Settings"]
+    let settingStrings = ["Todo", "Notes"]
     let cellIdentifier = "settingCell"
     
     override func viewDidLoad() {
@@ -52,13 +52,9 @@ extension SideNavigationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.item {
         case 0:
-            navigationDelegate?.segue(to: FoldersViewController())
-        case 1:
             navigationDelegate?.segue(to: TodosViewController())
-        case 2:
+        case 1:
             navigationDelegate?.segue(to: NotesViewController())
-//        case 3:
-//            navigationDelegate?.segue(to: <#T##BaseViewController#>)
         default:
             print("ERR")
         }

@@ -11,7 +11,7 @@ import UIKit
 class ContainerViewController: UIViewController {
     
     lazy var mainViewController: UINavigationController = {
-        let fVC = FoldersViewController()
+        let fVC = NotesViewController()
         fVC.navigationDrawerDelegate = self
         let mainvc = UINavigationController(rootViewController: fVC)
         return mainvc
@@ -27,12 +27,10 @@ class ContainerViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(mainViewController.view)
         addChild(mainViewController)
-//        self.segue(to: FoldersViewController())
     }
 }
 
@@ -65,13 +63,6 @@ extension ContainerViewController: CenterViewDelegate{
 extension ContainerViewController: CenterNavigationDelegate {
     func segue(to vc: BaseViewController) {
         toogleDrawer {
-//            mainViewController.view.removeFromSuperview()
-//            mainViewController.removeFromParent()
-//            mainViewController = nil
-//            vc.navigationDrawerDelegate = self
-//            mainViewController = UINavigationController(rootViewController: vc)
-//            view.addSubview(mainViewController.view)
-//            addChild(mainViewController)
             vc.navigationDrawerDelegate = self
             self.mainViewController.pushViewController(vc, animated: true)
         }

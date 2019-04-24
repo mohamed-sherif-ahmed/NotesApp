@@ -20,6 +20,10 @@ class NotesViewController: BaseViewController {
         super.viewDidLoad()
         navigationItem.title = "Notes"
         notesCollectionView.register(FolderCollectionViewCell.self, forCellWithReuseIdentifier: "noteCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let req: NSFetchRequest<Note> = Note.fetchRequest()
         do {
             notes = try context.fetch(req)
@@ -27,7 +31,10 @@ class NotesViewController: BaseViewController {
             print("Error Fetching NotesVC")
         }
         notesCollectionView.reloadData()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func addItem() {
+        navigationController?.pushViewController(NoteEditViewController(), animated: true)
     }
 }
 
@@ -45,7 +52,7 @@ extension NotesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = NoteEditViewController()
-        vc.noteName = "Note #\(indexPath.item)"
+        vc.note = notes[indexPath.item]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -53,7 +60,7 @@ extension NotesViewController: UICollectionViewDataSource {
 //MARK: FlowLayoutDelegate
 extension NotesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.width - 10) / 2
-        return CGSize(width: size, height: size)
+        let size = (collectionView.frame.width - 20)
+        return CGSize(width: size, height: 75)
     }
 }

@@ -23,14 +23,17 @@ class TodosViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-        // Do any additional setup after loading the view.
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         [tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
          tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)].forEach {$0.isActive = true}
+         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)].forEach{$0.isActive = true}
         
+    }
+    
+    override func addItem() {
+        //TODO: implement addTodo :D
     }
 }
 
@@ -48,7 +51,6 @@ extension TodosViewController: UITableViewDataSource {
 
 extension TodosViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as! TodoItemTableViewCell
-//        cell.toogleStatus()
+        
     }
 }

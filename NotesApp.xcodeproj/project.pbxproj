@@ -28,7 +28,6 @@
 		109E327B226B5C9C00D40162 /* TodoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E327A226B5C9C00D40162 /* TodoItemTableViewCell.swift */; };
 		109E327D226B95AD00D40162 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E327C226B95AD00D40162 /* TodoList.swift */; };
 		109E327F226B95EE00D40162 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E327E226B95EE00D40162 /* TodoItem.swift */; };
-		10AB303C224210A200449264 /* FoldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB303B224210A200449264 /* FoldersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +54,6 @@
 		109E327A226B5C9C00D40162 /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = "<group>"; };
 		109E327C226B95AD00D40162 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		109E327E226B95EE00D40162 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
-		10AB303B224210A200449264 /* FoldersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 			children = (
 				108ED57F223515110093AAE4 /* BaseViewController.swift */,
 				10939D9A223F838A00D3E3B1 /* NotesViewController.swift */,
-				10AB303B224210A200449264 /* FoldersViewController.swift */,
 				10046BE0224275810041415C /* TodosViewController.swift */,
 				10046BE42244BEE40041415C /* NoteEditViewController.swift */,
 				107553AB2260B665001F2FF6 /* ContainerViewController.swift */,
@@ -240,7 +237,6 @@
 				10046BE2224275810041415C /* TodosViewController.swift in Sources */,
 				108ED57022350D1D0093AAE4 /* NotesApp.xcdatamodeld in Sources */,
 				107553B622621022001F2FF6 /* Note.swift in Sources */,
-				10AB303C224210A200449264 /* FoldersViewController.swift in Sources */,
 				109E327D226B95AD00D40162 /* TodoList.swift in Sources */,
 				108ED56822350D1D0093AAE4 /* AppDelegate.swift in Sources */,
 				10046BE52244BEE40041415C /* NoteEditViewController.swift in Sources */,

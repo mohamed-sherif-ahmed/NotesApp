@@ -11,8 +11,7 @@ import UIKit
 class NoteEditViewController: UIViewController {
     lazy var noteTitle: UITextView = {
         let tv = UITextView()
-        tv.text = "Note Title !"
-        tv.textColor = .gray
+        tv.textColor = .black
         tv.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         tv.delegate = self
         return tv
@@ -20,24 +19,32 @@ class NoteEditViewController: UIViewController {
     
     lazy var noteText: UITextView = {
         let tv = UITextView()
-        tv.text = "Note Body !"
-        tv.textColor = .gray
+        tv.textColor = .black
         tv.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         tv.delegate = self
         return tv
     }()
-    
-    var noteName: String?
 
+    var note: Note?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = noteName!
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
+        navigationItem.title = note?.title ?? "New Note"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote))
         prepareView()
     }
     
     func prepareView() {
         view.backgroundColor = .white
+        if let _ = note {
+            noteText.text = note?.text
+            noteTitle.text = note?.title
+        } else {
+            noteText.text = "Note Text"
+            noteTitle.text = "New Note"
+            noteText.textColor = .gray
+            noteTitle.textColor = .gray
+        }
         view.addSubview(noteText)
         view.addSubview(noteTitle)
         noteTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -51,9 +58,32 @@ class NoteEditViewController: UIViewController {
          noteText.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
          noteText.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)].forEach { $0.isActive = true}
     }
+    
+    @objc func saveNote() {
+        let context = AppDelegate.viewContext
+        if note == nil {
+            let note = Note(context: context)
+            note.title = noteTitle.text
+            note.text = noteText.text
+        } else {
+            note?.text = noteText.text
+            note?.title = noteTitle.text
+        }
+        do {
+            try context.save()
+        } catch {
+            print("")
+        }
+    }
 }
 
 extension NoteEditViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if textView == noteTitle {
+            navigationItem.title = textView.text
+        }
+    }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .gray {
             textView.text = nil
@@ -65,9 +95,9 @@ extension NoteEditViewController: UITextViewDelegate {
         if textView.text == nil || textView.text == "" {
             textView.textColor = .gray
             if textView == noteTitle {
-                textView.text = "Note Title !"
+                textView.text = "New Note"
             } else {
-                textView.text = "Note Body !"
+                textView.text = "Note Text"
             }
         }
     }

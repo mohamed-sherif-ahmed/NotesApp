@@ -11,3 +11,9 @@ import Foundation
 enum Constants: Int {
     case remainingWidth = 120
 }
+
+
+extension Notification.Name {
+    static let notesNotification = Notification.Name("notes")
+    static let todoNotification = Notification.Name("todo")
+}

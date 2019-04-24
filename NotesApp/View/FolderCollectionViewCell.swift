@@ -18,15 +18,23 @@ class FolderCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor = .gray
+        backgroundView = UIView()
+        backgroundView?.backgroundColor = .white
+        backgroundView?.layer.cornerRadius = 10
+        addSubview(backgroundView!)
         addSubview(folderName)
+        
         folderName.translatesAutoresizingMaskIntoConstraints = false
-        [folderName.centerXAnchor.constraint(equalTo: centerXAnchor),
-         folderName.centerYAnchor.constraint(equalTo: centerYAnchor)].forEach{$0.isActive = true}
-        layer.borderColor = UIColor.lightGray.cgColor
-        layer.borderWidth = 1.0
+        [folderName.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+         folderName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         folderName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
+         backgroundView?.topAnchor.constraint(equalTo: topAnchor),
+         backgroundView?.bottomAnchor.constraint(equalTo: bottomAnchor),
+         backgroundView?.leadingAnchor.constraint(equalTo: leadingAnchor),
+         backgroundView?.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach{$0?.isActive = true}
         
-        
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.black.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -16,19 +16,20 @@ class BaseViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Profile", style: .plain, target: self, action: #selector(openSide))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addDummyNote))
+        
+        let imageButton = UIButton(type: .custom)
+        imageButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        imageButton.setImage(#imageLiteral(resourceName: "add"), for: .normal)
+        imageButton.addTarget(self, action: #selector(addItem), for: .touchUpInside)
+        
+        let rightItem = UIBarButtonItem(customView: imageButton)
+        [rightItem.customView?.widthAnchor.constraint(equalToConstant: 25),
+         rightItem.customView?.heightAnchor.constraint(equalToConstant: 25)].forEach {$0?.isActive = true}
+        navigationItem.rightBarButtonItem = rightItem
     }
     
-    @objc func addDummyNote() {
-        let context = AppDelegate.viewContext
-        let note = Note(context: context)
-        note.text = "Core Data Test!!"
-        note.title = "Core Data Title!!"
-        do {
-            try context.save()
-        } catch {
-            print("ERR!! SAVING CONTEXT MainVC")
-        }
+    @objc func addItem() {
+        fatalError("addItem hasnot been implemented !")
     }
     
     @objc func openSide() {
