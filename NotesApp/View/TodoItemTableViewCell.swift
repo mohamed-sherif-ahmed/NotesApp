@@ -9,21 +9,20 @@
 import UIKit
 
 class TodoItemTableViewCell: UITableViewCell {
-    var status = false
-    var titleString: String?
+    let checkedAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: 2, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold)]
+    let uncheckedAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold)]
     
     lazy var imgCheck: UIImageView = {
         let img = UIImageView()
-        img.image = #imageLiteral(resourceName: "offChecked").withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
+        img.image = applyImageInsets(to: #imageLiteral(resourceName: "offChecked"))
         img.contentMode = .scaleAspectFit
         return img
     }()
     
     lazy var todoTitle: UITextField = {
         let tv = UITextField()
-        tv.text = "Note Title !"
         tv.textColor = .black
-        tv.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        tv.attributedText = NSAttributedString(string: "", attributes: uncheckedAttributes)
         tv.isEnabled = false
         return tv
     }()
@@ -42,22 +41,17 @@ class TodoItemTableViewCell: UITableViewCell {
          todoTitle.centerYAnchor.constraint(equalTo: centerYAnchor),
          todoTitle.heightAnchor.constraint(equalToConstant: 40),
          todoTitle.bottomAnchor.constraint(equalTo: bottomAnchor),
-         
          todoTitle.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach {$0.isActive = true}
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         if selected {
-            imgCheck.image = #imageLiteral(resourceName: "onCheck").withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
-            let att: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: 2, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold)]
-            let attString = NSAttributedString(string: titleString!, attributes: att)
-            todoTitle.text = nil
+            imgCheck.image = applyImageInsets(to: #imageLiteral(resourceName: "onCheck"))
+            let attString = NSAttributedString(string: todoTitle.attributedText!.string, attributes: checkedAttributes)
             todoTitle.attributedText = attString
-            status = true
         } else {
-            imgCheck.image = #imageLiteral(resourceName: "offChecked").withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
-            todoTitle.attributedText = NSAttributedString(string: titleString!, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold)])
-            status = false
+            imgCheck.image = applyImageInsets(to: #imageLiteral(resourceName: "offChecked"))
+            todoTitle.attributedText = NSAttributedString(string: todoTitle.attributedText!.string, attributes: uncheckedAttributes)
         }
     }
     
@@ -69,25 +63,19 @@ class TodoItemTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    func setTodoTitle(_ name: String) {
-        titleString = name
-        todoTitle.text = name
-    }
-    
-    func toogleStatus() {
-//        if !status {
-//            imgCheck.image = #imageLiteral(resourceName: "onCheck").withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
-//            let att: [NSAttributedString.Key: Any] = [NSAttributedString.Key.strikethroughStyle: 2, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold)]
-//            let attString = NSAttributedString(string: titleString!, attributes: att)
-//            todoTitle.text = nil
-//            todoTitle.attributedText = attString
-//            status = true
-//        } else {
-//            imgCheck.image = #imageLiteral(resourceName: "offChecked").withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
-//            todoTitle.attributedText = NSAttributedString(string: titleString!, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold)])
-//            status = false
-//        }
-       
+    func applyImageInsets(to img: UIImage) -> UIImage {
+        return img.withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
     }
 }
+//
+//extension TodoItemTableViewCell: UITextFieldDelegate {
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        todoItem?.itemTitle = textField.text
+//        textField.isEnabled = false
+//        do{
+//            try AppDelegate.viewContext.save()
+//        } catch {
+//            print("?")
+//        }
+//    }
+//}

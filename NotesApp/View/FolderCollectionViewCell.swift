@@ -20,7 +20,7 @@ class FolderCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         backgroundView = UIView()
         backgroundView?.backgroundColor = .white
-        backgroundView?.layer.cornerRadius = 10
+        backgroundView?.layer.cornerRadius = 5
         addSubview(backgroundView!)
         addSubview(folderName)
         
@@ -32,9 +32,6 @@ class FolderCollectionViewCell: UICollectionViewCell {
          backgroundView?.bottomAnchor.constraint(equalTo: bottomAnchor),
          backgroundView?.leadingAnchor.constraint(equalTo: leadingAnchor),
          backgroundView?.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach{$0?.isActive = true}
-        
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {

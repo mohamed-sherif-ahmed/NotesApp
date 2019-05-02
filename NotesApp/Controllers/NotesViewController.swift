@@ -20,6 +20,8 @@ class NotesViewController: BaseViewController {
         super.viewDidLoad()
         navigationItem.title = "Notes"
         notesCollectionView.register(FolderCollectionViewCell.self, forCellWithReuseIdentifier: "noteCell")
+        view.backgroundColor = UIColor(red: 235/255, green: 237/255, blue: 254/255, alpha: 1.0)
+        notesCollectionView.backgroundColor = UIColor(white: 1, alpha: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -10,6 +10,7 @@
 		10046BE2224275810041415C /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BE0224275810041415C /* TodosViewController.swift */; };
 		10046BE3224275810041415C /* TodosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10046BE1224275810041415C /* TodosViewController.xib */; };
 		10046BE52244BEE40041415C /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BE42244BEE40041415C /* NoteEditViewController.swift */; };
+		1009BF3E2272C5DE006CA71B /* TodolistsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1009BF3D2272C5DE006CA71B /* TodolistsCollectionViewController.swift */; };
 		107553AC2260B665001F2FF6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553AB2260B665001F2FF6 /* ContainerViewController.swift */; };
 		107553AE2260C03E001F2FF6 /* SideNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553AD2260C03E001F2FF6 /* SideNavigationViewController.swift */; };
 		107553B022611090001F2FF6 /* CenterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553AF22611090001F2FF6 /* CenterViewDelegate.swift */; };
@@ -34,6 +35,7 @@
 		10046BE0224275810041415C /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
 		10046BE1224275810041415C /* TodosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodosViewController.xib; sourceTree = "<group>"; };
 		10046BE42244BEE40041415C /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
+		1009BF3D2272C5DE006CA71B /* TodolistsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistsCollectionViewController.swift; sourceTree = "<group>"; };
 		107553AB2260B665001F2FF6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		107553AD2260C03E001F2FF6 /* SideNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationViewController.swift; sourceTree = "<group>"; };
 		107553AF22611090001F2FF6 /* CenterViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				107553AD2260C03E001F2FF6 /* SideNavigationViewController.swift */,
 				107553AF22611090001F2FF6 /* CenterViewDelegate.swift */,
 				107553B122611403001F2FF6 /* CenterNavigationDelegate.swift */,
+				1009BF3D2272C5DE006CA71B /* TodolistsCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				108ED580223515110093AAE4 /* BaseViewController.swift in Sources */,
 				10939D9C223F838A00D3E3B1 /* NotesViewController.swift in Sources */,
 				107553B222611403001F2FF6 /* CenterNavigationDelegate.swift in Sources */,
+				1009BF3E2272C5DE006CA71B /* TodolistsCollectionViewController.swift in Sources */,
 				107553AC2260B665001F2FF6 /* ContainerViewController.swift in Sources */,
 				107553B422612ED9001F2FF6 /* Constants.swift in Sources */,
 				109E327F226B95EE00D40162 /* TodoItem.swift in Sources */,

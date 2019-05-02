@@ -17,6 +17,7 @@ class SideNavigationViewController: UIViewController {
         tableView.reloadData()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.isScrollEnabled = false
+        tableView.backgroundColor = UIColor(red: 62/255, green: 87/255, blue: 228/255, alpha: 1.0)
         return tableView
     }()
     
@@ -27,12 +28,13 @@ class SideNavigationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(white: 1, alpha: 0)
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         [tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)].forEach {$0.isActive = true}
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)].forEach {$0.isActive = true}
     }
 }
 
@@ -44,6 +46,7 @@ extension SideNavigationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         cell.textLabel?.text = settingStrings[indexPath.item]
+        cell.backgroundColor = UIColor(white: 1, alpha: 0)
         return cell
     }
 }
@@ -52,7 +55,7 @@ extension SideNavigationViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.item {
         case 0:
-            navigationDelegate?.segue(to: TodosViewController())
+            navigationDelegate?.segue(to: TodolistsCollectionViewController())
         case 1:
             navigationDelegate?.segue(to: NotesViewController())
         default:

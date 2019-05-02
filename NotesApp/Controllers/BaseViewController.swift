@@ -26,6 +26,7 @@ class BaseViewController: UIViewController{
         [rightItem.customView?.widthAnchor.constraint(equalToConstant: 25),
          rightItem.customView?.heightAnchor.constraint(equalToConstant: 25)].forEach {$0?.isActive = true}
         navigationItem.rightBarButtonItem = rightItem
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     @objc func addItem() {
