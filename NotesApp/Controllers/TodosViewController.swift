@@ -29,6 +29,8 @@ class TodosViewController: UIViewController {
         imageButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         imageButton.setImage(#imageLiteral(resourceName: "add"), for: .normal)
         imageButton.addTarget(self, action: #selector(addItem), for: .touchUpInside)
+        navigationItem.largeTitleDisplayMode = .never
+        
         
         let rightItem = UIBarButtonItem(customView: imageButton)
         [rightItem.customView?.widthAnchor.constraint(equalToConstant: 25),

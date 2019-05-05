@@ -31,6 +31,7 @@ class NoteEditViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = note?.title ?? "New Note"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote))
+        navigationItem.largeTitleDisplayMode = .never
         prepareView()
     }
     

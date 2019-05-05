@@ -11,14 +11,16 @@ import CoreData
 
 private let reuseIdentifier = "todoCell"
 
-class TodolistsCollectionViewController: BaseViewController{
+class TodolistsCollectionViewController: UIViewController{
     
-    lazy var collectionView: UICollectionView = {
-        let cv = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
-        cv.register(FolderCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    lazy var todoListTableView: UITableView = {
+        let cv = UITableView()
+        cv.register(FolderCollectionViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         cv.backgroundColor = .white
         cv.dataSource = self
         cv.delegate = self
+        cv.separatorStyle = .none
+        cv.backgroundColor = UIColor(white: 1, alpha: 0)
         return cv
     }()
     
@@ -27,13 +29,16 @@ class TodolistsCollectionViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(collectionView)
+        view.backgroundColor = UIColor(red: 241/255, green: 238/255, blue: 241/255, alpha: 1.0)
+        view.addSubview(todoListTableView)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Todos"
         
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        [collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)].forEach{$0.isActive = true}
+        todoListTableView.translatesAutoresizingMaskIntoConstraints = false
+        [todoListTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+        todoListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        todoListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        todoListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)].forEach{$0.isActive = true}
         
         let req: NSFetchRequest<TodoList> = TodoList.fetchRequest()
         
@@ -43,10 +48,10 @@ class TodolistsCollectionViewController: BaseViewController{
             print("Error Fetching NotesVC")
         }
         
-        collectionView.reloadData()
+        todoListTableView.reloadData()
     }
     
-    override func addItem() {
+    func addItem() {
         print("Hannnnn2aaad !")
         let tl = TodoList(context: context)
         tl.listTitle = "Testtt"
@@ -59,33 +64,26 @@ class TodolistsCollectionViewController: BaseViewController{
         } catch {
             print("neb2a neshuf 7al")
         }
-        collectionView.reloadData()
+        todoListTableView.reloadData()
     }
 }
 
-extension TodolistsCollectionViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension TodolistsCollectionViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoLists.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FolderCollectionViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! FolderCollectionViewCell
         cell.folderName.text = todoLists[indexPath.item].listTitle
         return cell
     }
 }
 
-extension TodolistsCollectionViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+extension TodolistsCollectionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = TodosViewController()
         vc.todos = todoLists[indexPath.item].items?.allObjects as! [TodoItem]
         navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-extension TodolistsCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.width - 20)
-        return CGSize(width: size, height: 75)
     }
 }

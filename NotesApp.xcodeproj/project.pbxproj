@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		10046BE2224275810041415C /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BE0224275810041415C /* TodosViewController.swift */; };
-		10046BE3224275810041415C /* TodosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10046BE1224275810041415C /* TodosViewController.xib */; };
 		10046BE52244BEE40041415C /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10046BE42244BEE40041415C /* NoteEditViewController.swift */; };
 		1009BF3E2272C5DE006CA71B /* TodolistsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1009BF3D2272C5DE006CA71B /* TodolistsCollectionViewController.swift */; };
-		107553AC2260B665001F2FF6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553AB2260B665001F2FF6 /* ContainerViewController.swift */; };
-		107553AE2260C03E001F2FF6 /* SideNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553AD2260C03E001F2FF6 /* SideNavigationViewController.swift */; };
-		107553B022611090001F2FF6 /* CenterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553AF22611090001F2FF6 /* CenterViewDelegate.swift */; };
-		107553B222611403001F2FF6 /* CenterNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553B122611403001F2FF6 /* CenterNavigationDelegate.swift */; };
+		1009BF40227B4DDB006CA71B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1009BF3F227B4DDB006CA71B /* InitialViewController.swift */; };
 		107553B422612ED9001F2FF6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553B322612ED9001F2FF6 /* Constants.swift */; };
 		107553B622621022001F2FF6 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107553B522621022001F2FF6 /* Note.swift */; };
 		108ED56822350D1D0093AAE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108ED56722350D1D0093AAE4 /* AppDelegate.swift */; };
@@ -22,10 +18,8 @@
 		108ED57022350D1D0093AAE4 /* NotesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 108ED56E22350D1D0093AAE4 /* NotesApp.xcdatamodeld */; };
 		108ED57222350D1F0093AAE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 108ED57122350D1F0093AAE4 /* Assets.xcassets */; };
 		108ED57522350D1F0093AAE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108ED57322350D1F0093AAE4 /* LaunchScreen.storyboard */; };
-		108ED580223515110093AAE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108ED57F223515110093AAE4 /* BaseViewController.swift */; };
 		108ED58522351A240093AAE4 /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */; };
 		10939D9C223F838A00D3E3B1 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10939D9A223F838A00D3E3B1 /* NotesViewController.swift */; };
-		10939D9D223F838A00D3E3B1 /* NotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10939D9B223F838A00D3E3B1 /* NotesViewController.xib */; };
 		109E327B226B5C9C00D40162 /* TodoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E327A226B5C9C00D40162 /* TodoItemTableViewCell.swift */; };
 		109E327D226B95AD00D40162 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E327C226B95AD00D40162 /* TodoList.swift */; };
 		109E327F226B95EE00D40162 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E327E226B95EE00D40162 /* TodoItem.swift */; };
@@ -33,13 +27,9 @@
 
 /* Begin PBXFileReference section */
 		10046BE0224275810041415C /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
-		10046BE1224275810041415C /* TodosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodosViewController.xib; sourceTree = "<group>"; };
 		10046BE42244BEE40041415C /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		1009BF3D2272C5DE006CA71B /* TodolistsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistsCollectionViewController.swift; sourceTree = "<group>"; };
-		107553AB2260B665001F2FF6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		107553AD2260C03E001F2FF6 /* SideNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNavigationViewController.swift; sourceTree = "<group>"; };
-		107553AF22611090001F2FF6 /* CenterViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewDelegate.swift; sourceTree = "<group>"; };
-		107553B122611403001F2FF6 /* CenterNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterNavigationDelegate.swift; sourceTree = "<group>"; };
+		1009BF3F227B4DDB006CA71B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		107553B322612ED9001F2FF6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		107553B522621022001F2FF6 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		108ED56422350D1D0093AAE4 /* NotesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,10 +39,8 @@
 		108ED57122350D1F0093AAE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		108ED57422350D1F0093AAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		108ED57622350D1F0093AAE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		108ED57F223515110093AAE4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		10939D9A223F838A00D3E3B1 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		10939D9B223F838A00D3E3B1 /* NotesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesViewController.xib; sourceTree = "<group>"; };
 		109E327A226B5C9C00D40162 /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = "<group>"; };
 		109E327C226B95AD00D40162 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		109E327E226B95EE00D40162 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
@@ -131,15 +119,11 @@
 		108ED57E22350DA00093AAE4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				108ED57F223515110093AAE4 /* BaseViewController.swift */,
 				10939D9A223F838A00D3E3B1 /* NotesViewController.swift */,
 				10046BE0224275810041415C /* TodosViewController.swift */,
 				10046BE42244BEE40041415C /* NoteEditViewController.swift */,
-				107553AB2260B665001F2FF6 /* ContainerViewController.swift */,
-				107553AD2260C03E001F2FF6 /* SideNavigationViewController.swift */,
-				107553AF22611090001F2FF6 /* CenterViewDelegate.swift */,
-				107553B122611403001F2FF6 /* CenterNavigationDelegate.swift */,
 				1009BF3D2272C5DE006CA71B /* TodolistsCollectionViewController.swift */,
+				1009BF3F227B4DDB006CA71B /* InitialViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				108ED58422351A240093AAE4 /* FolderCollectionViewCell.swift */,
-				10939D9B223F838A00D3E3B1 /* NotesViewController.xib */,
-				10046BE1224275810041415C /* TodosViewController.xib */,
 				109E327A226B5C9C00D40162 /* TodoItemTableViewCell.swift */,
 			);
 			path = View;
@@ -214,9 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10046BE3224275810041415C /* TodosViewController.xib in Resources */,
 				108ED57522350D1F0093AAE4 /* LaunchScreen.storyboard in Resources */,
-				10939D9D223F838A00D3E3B1 /* NotesViewController.xib in Resources */,
 				108ED57222350D1F0093AAE4 /* Assets.xcassets in Resources */,
 				108ED56D22350D1D0093AAE4 /* Main.storyboard in Resources */,
 			);
@@ -230,14 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				108ED58522351A240093AAE4 /* FolderCollectionViewCell.swift in Sources */,
-				108ED580223515110093AAE4 /* BaseViewController.swift in Sources */,
+				1009BF40227B4DDB006CA71B /* InitialViewController.swift in Sources */,
 				10939D9C223F838A00D3E3B1 /* NotesViewController.swift in Sources */,
-				107553B222611403001F2FF6 /* CenterNavigationDelegate.swift in Sources */,
 				1009BF3E2272C5DE006CA71B /* TodolistsCollectionViewController.swift in Sources */,
-				107553AC2260B665001F2FF6 /* ContainerViewController.swift in Sources */,
 				107553B422612ED9001F2FF6 /* Constants.swift in Sources */,
 				109E327F226B95EE00D40162 /* TodoItem.swift in Sources */,
-				107553AE2260C03E001F2FF6 /* SideNavigationViewController.swift in Sources */,
 				10046BE2224275810041415C /* TodosViewController.swift in Sources */,
 				108ED57022350D1D0093AAE4 /* NotesApp.xcdatamodeld in Sources */,
 				107553B622621022001F2FF6 /* Note.swift in Sources */,
@@ -245,7 +222,6 @@
 				108ED56822350D1D0093AAE4 /* AppDelegate.swift in Sources */,
 				10046BE52244BEE40041415C /* NoteEditViewController.swift in Sources */,
 				109E327B226B5C9C00D40162 /* TodoItemTableViewCell.swift in Sources */,
-				107553B022611090001F2FF6 /* CenterViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
